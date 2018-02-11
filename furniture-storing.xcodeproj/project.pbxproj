@@ -1,0 +1,464 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6C38384DC09E6786406CD8F1 /* Pods_furniture_storing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BF99B0FA07EA273BFE582EF /* Pods_furniture_storing.framework */; };
+		A47B97DE202ED6D500674E40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47B97DD202ED6D500674E40 /* AppDelegate.swift */; };
+		A47B97E0202ED6D500674E40 /* FurnitureLandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47B97DF202ED6D500674E40 /* FurnitureLandingViewController.swift */; };
+		A47B97E3202ED6D500674E40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A47B97E1202ED6D500674E40 /* Main.storyboard */; };
+		A47B97E5202ED6D500674E40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A47B97E4202ED6D500674E40 /* Assets.xcassets */; };
+		A47B97E8202ED6D500674E40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A47B97E6202ED6D500674E40 /* LaunchScreen.storyboard */; };
+		A47B97F0202EDAA800674E40 /* FurnitureItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47B97EF202EDAA800674E40 /* FurnitureItem.swift */; };
+		A47B97F3202EDE6300674E40 /* FurnitureLandingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47B97F1202EDE6300674E40 /* FurnitureLandingTableViewCell.swift */; };
+		A47B97F4202EDE6300674E40 /* FurnitureLandingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A47B97F2202EDE6300674E40 /* FurnitureLandingTableViewCell.xib */; };
+		A47B97F7202EDFDD00674E40 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47B97F6202EDFDD00674E40 /* Extensions.swift */; };
+		A47B97FA202EE3DB00674E40 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47B97F9202EE3DB00674E40 /* AddItemViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3B00095257C59E8D07D3988A /* Pods-furniture-storing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-furniture-storing.release.xcconfig"; path = "Pods/Target Support Files/Pods-furniture-storing/Pods-furniture-storing.release.xcconfig"; sourceTree = "<group>"; };
+		4BF99B0FA07EA273BFE582EF /* Pods_furniture_storing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_furniture_storing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		638FEE5D856C70EEAE32970F /* Pods-furniture-storing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-furniture-storing.debug.xcconfig"; path = "Pods/Target Support Files/Pods-furniture-storing/Pods-furniture-storing.debug.xcconfig"; sourceTree = "<group>"; };
+		A47B97DA202ED6D500674E40 /* furniture-storing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "furniture-storing.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A47B97DD202ED6D500674E40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A47B97DF202ED6D500674E40 /* FurnitureLandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurnitureLandingViewController.swift; sourceTree = "<group>"; };
+		A47B97E2202ED6D500674E40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A47B97E4202ED6D500674E40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A47B97E7202ED6D500674E40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A47B97E9202ED6D500674E40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A47B97EF202EDAA800674E40 /* FurnitureItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurnitureItem.swift; sourceTree = "<group>"; };
+		A47B97F1202EDE6300674E40 /* FurnitureLandingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurnitureLandingTableViewCell.swift; sourceTree = "<group>"; };
+		A47B97F2202EDE6300674E40 /* FurnitureLandingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FurnitureLandingTableViewCell.xib; sourceTree = "<group>"; };
+		A47B97F6202EDFDD00674E40 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A47B97F9202EE3DB00674E40 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A47B97D7202ED6D500674E40 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C38384DC09E6786406CD8F1 /* Pods_furniture_storing.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		22056DD30051015D76A8A225 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				638FEE5D856C70EEAE32970F /* Pods-furniture-storing.debug.xcconfig */,
+				3B00095257C59E8D07D3988A /* Pods-furniture-storing.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A47B97D1202ED6D500674E40 = {
+			isa = PBXGroup;
+			children = (
+				A47B97DC202ED6D500674E40 /* furniture-storing */,
+				A47B97DB202ED6D500674E40 /* Products */,
+				22056DD30051015D76A8A225 /* Pods */,
+				F7EE7605486E03C89341F2B0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A47B97DB202ED6D500674E40 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A47B97DA202ED6D500674E40 /* furniture-storing.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A47B97DC202ED6D500674E40 /* furniture-storing */ = {
+			isa = PBXGroup;
+			children = (
+				A47B97DD202ED6D500674E40 /* AppDelegate.swift */,
+				A47B97E1202ED6D500674E40 /* Main.storyboard */,
+				A4E9DF7C20300589004A706A /* ViewControllers */,
+				A47B97F8202EE06400674E40 /* TableView Cells */,
+				A4E9DF7D203005AC004A706A /* Model */,
+				A47B97F5202EDFCD00674E40 /* Utility */,
+				A47B97E4202ED6D500674E40 /* Assets.xcassets */,
+				A47B97E6202ED6D500674E40 /* LaunchScreen.storyboard */,
+				A47B97E9202ED6D500674E40 /* Info.plist */,
+			);
+			path = "furniture-storing";
+			sourceTree = "<group>";
+		};
+		A47B97F5202EDFCD00674E40 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				A47B97F6202EDFDD00674E40 /* Extensions.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		A47B97F8202EE06400674E40 /* TableView Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A47B97F1202EDE6300674E40 /* FurnitureLandingTableViewCell.swift */,
+				A47B97F2202EDE6300674E40 /* FurnitureLandingTableViewCell.xib */,
+			);
+			path = "TableView Cells";
+			sourceTree = "<group>";
+		};
+		A4E9DF7C20300589004A706A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A47B97DF202ED6D500674E40 /* FurnitureLandingViewController.swift */,
+				A47B97F9202EE3DB00674E40 /* AddItemViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A4E9DF7D203005AC004A706A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A47B97EF202EDAA800674E40 /* FurnitureItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F7EE7605486E03C89341F2B0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4BF99B0FA07EA273BFE582EF /* Pods_furniture_storing.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A47B97D9202ED6D500674E40 /* furniture-storing */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A47B97EC202ED6D500674E40 /* Build configuration list for PBXNativeTarget "furniture-storing" */;
+			buildPhases = (
+				CB8713DF535858D9BF91F547 /* [CP] Check Pods Manifest.lock */,
+				A47B97D6202ED6D500674E40 /* Sources */,
+				A47B97D7202ED6D500674E40 /* Frameworks */,
+				A47B97D8202ED6D500674E40 /* Resources */,
+				95C586CBFE69D182906A5E88 /* [CP] Embed Pods Frameworks */,
+				217BFFC6E7D52CD588B6AB8D /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "furniture-storing";
+			productName = "furniture-storing";
+			productReference = A47B97DA202ED6D500674E40 /* furniture-storing.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A47B97D2202ED6D500674E40 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = shravan;
+				TargetAttributes = {
+					A47B97D9202ED6D500674E40 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = A47B97D5202ED6D500674E40 /* Build configuration list for PBXProject "furniture-storing" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A47B97D1202ED6D500674E40;
+			productRefGroup = A47B97DB202ED6D500674E40 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A47B97D9202ED6D500674E40 /* furniture-storing */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A47B97D8202ED6D500674E40 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A47B97E8202ED6D500674E40 /* LaunchScreen.storyboard in Resources */,
+				A47B97E5202ED6D500674E40 /* Assets.xcassets in Resources */,
+				A47B97F4202EDE6300674E40 /* FurnitureLandingTableViewCell.xib in Resources */,
+				A47B97E3202ED6D500674E40 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		217BFFC6E7D52CD588B6AB8D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-furniture-storing/Pods-furniture-storing-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		95C586CBFE69D182906A5E88 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-furniture-storing/Pods-furniture-storing-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-furniture-storing/Pods-furniture-storing-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB8713DF535858D9BF91F547 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-furniture-storing-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A47B97D6202ED6D500674E40 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A47B97F7202EDFDD00674E40 /* Extensions.swift in Sources */,
+				A47B97E0202ED6D500674E40 /* FurnitureLandingViewController.swift in Sources */,
+				A47B97DE202ED6D500674E40 /* AppDelegate.swift in Sources */,
+				A47B97F3202EDE6300674E40 /* FurnitureLandingTableViewCell.swift in Sources */,
+				A47B97F0202EDAA800674E40 /* FurnitureItem.swift in Sources */,
+				A47B97FA202EE3DB00674E40 /* AddItemViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A47B97E1202ED6D500674E40 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A47B97E2202ED6D500674E40 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A47B97E6202ED6D500674E40 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A47B97E7202ED6D500674E40 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A47B97EA202ED6D500674E40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A47B97EB202ED6D500674E40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A47B97ED202ED6D500674E40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 638FEE5D856C70EEAE32970F /* Pods-furniture-storing.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 48UFH6Q9SV;
+				INFOPLIST_FILE = "furniture-storing/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "shravan.furniture-storing";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A47B97EE202ED6D500674E40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B00095257C59E8D07D3988A /* Pods-furniture-storing.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 48UFH6Q9SV;
+				INFOPLIST_FILE = "furniture-storing/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "shravan.furniture-storing";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A47B97D5202ED6D500674E40 /* Build configuration list for PBXProject "furniture-storing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A47B97EA202ED6D500674E40 /* Debug */,
+				A47B97EB202ED6D500674E40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A47B97EC202ED6D500674E40 /* Build configuration list for PBXNativeTarget "furniture-storing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A47B97ED202ED6D500674E40 /* Debug */,
+				A47B97EE202ED6D500674E40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A47B97D2202ED6D500674E40 /* Project object */;
+}
