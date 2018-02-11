@@ -123,7 +123,7 @@ extension FurnitureLandingViewController: UITableViewDataSource {
 extension FurnitureLandingViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedIndexPath = indexPath
-        performSegue(withIdentifier: identifier, sender: self)
+      //  performSegue(withIdentifier: identifier, sender: self)
     }
 }
 

@@ -63,7 +63,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q7e-CS-mPO">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mJ-b3-WZT" userLabel="addImageButton">
+                                <rect key="frame" x="108" y="114" width="158" height="30"/>
+                                <state key="normal" title="Tap here to add image!"/>
+                                <connections>
+                                    <action selector="addImageButtonTapped:" destination="0QH-Wd-y3c" eventType="touchUpInside" id="w4j-rz-7hl"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tap_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Q7e-CS-mPO" userLabel="itemImageView">
                                 <rect key="frame" x="137" y="79" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="EoY-i1-Zr3"/>
@@ -102,6 +109,8 @@
                         <constraints>
                             <constraint firstItem="Q7e-CS-mPO" firstAttribute="centerX" secondItem="JMK-tL-VT5" secondAttribute="centerX" id="EX6-Pd-FU5"/>
                             <constraint firstItem="Q7e-CS-mPO" firstAttribute="top" secondItem="Axn-hD-fvd" secondAttribute="top" constant="15" id="KRZ-mP-euP"/>
+                            <constraint firstItem="9mJ-b3-WZT" firstAttribute="top" secondItem="Axn-hD-fvd" secondAttribute="top" constant="50" id="KwQ-v3-hNl"/>
+                            <constraint firstItem="9mJ-b3-WZT" firstAttribute="centerX" secondItem="JMK-tL-VT5" secondAttribute="centerX" id="Liw-hI-pkj"/>
                             <constraint firstItem="Axn-hD-fvd" firstAttribute="trailing" secondItem="C8m-PH-EzY" secondAttribute="trailing" constant="20" id="Rgd-ou-BPT"/>
                             <constraint firstItem="C8m-PH-EzY" firstAttribute="top" secondItem="Q7e-CS-mPO" secondAttribute="bottom" constant="20" id="aKF-SO-47W"/>
                             <constraint firstItem="C8m-PH-EzY" firstAttribute="leading" secondItem="Axn-hD-fvd" secondAttribute="leading" constant="20" id="vad-Zj-RSc"/>
@@ -109,7 +118,9 @@
                         <viewLayoutGuide key="safeArea" id="Axn-hD-fvd"/>
                     </view>
                     <connections>
+                        <outlet property="addImageButton" destination="9mJ-b3-WZT" id="GdK-Ov-ybm"/>
                         <outlet property="descriptionTextView" destination="nC4-0g-dK3" id="sUv-nH-vUp"/>
+                        <outlet property="itemImageView" destination="Q7e-CS-mPO" id="icJ-dM-yzd"/>
                         <outlet property="nameTextField" destination="fcp-Dw-GeG" id="yPJ-kh-Pbn"/>
                         <outlet property="typeTextField" destination="Q9Z-Oz-HfO" id="289-rn-BnO"/>
                     </connections>
@@ -138,4 +149,7 @@
             <point key="canvasLocation" x="-334.39999999999998" y="-38.680659670164921"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tap_icon" width="20" height="20"/>
+    </resources>
 </document>

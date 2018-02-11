@@ -11,29 +11,51 @@ import RealmSwift
 
 class AddItemViewController: UIViewController {
     
+    // MARK: - IBOutlets
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var typeTextField: UITextField!
     @IBOutlet var descriptionTextView: UITextView!
+    @IBOutlet var itemImageView: UIImageView!
+    @IBOutlet var addImageButton: UIButton!
     
+    // MARK: - Constants and Variables
     var item: FurnitureItem?
     var count: Int = 1
     let realm = try! Realm()
+    var imagePickerController = UIImagePickerController()
+    var saveButton = UIBarButtonItem()
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupNavigation()
         setupViews()
+        //addTextToImage()
     }
     
+    // MARK: - Private Methods
     private func setupNavigation() {
         navigationItem.title = "Add Item"
-        let saveButton = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveButtonTapped))
+        saveButton = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveButtonTapped))
         navigationItem.rightBarButtonItem = saveButton
     }
     
     private func setupViews() {
-        descriptionTextView.text = "Enter description here"
+        imagePickerController.delegate = self
+        imagePickerController.sourceType = .camera
+        if let item = item {
+            nameTextField.text = item.name
+            typeTextField.text = item.type
+            addImageButton.isHidden = true
+            itemImageView.isHidden = false
+            saveButton.isEnabled = false
+        } else {
+            descriptionTextView.text = "Enter description here"
+            addImageButton.isHidden = false
+            itemImageView.isHidden = true
+            
+        }
     }
     
     @objc func saveButtonTapped() {
@@ -46,5 +68,21 @@ class AddItemViewController: UIViewController {
         }
         
     }
+    
+    // MARK: - IBActions
+    @IBAction func addImageButtonTapped(_ sender: UIButton) {
+        present(imagePickerController, animated: true, completion: nil)
+    }
+    
+}
 
+// MARK: - UIImagePickerControllerDelegate
+extension AddItemViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        print(info)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        
+    }
 }
