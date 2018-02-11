@@ -18,6 +18,7 @@ class FurnitureLandingViewController: UIViewController {
     // MARK: - Constants and Variables
     let realm = try! Realm()
     var token: NotificationToken?
+    var selectedIndexPath : IndexPath!
     let identifier = "AddItemSegueIdentifier"
     var furnitureItems: Results<FurnitureItem>? {
         didSet {
@@ -65,13 +66,18 @@ class FurnitureLandingViewController: UIViewController {
         
         setupNavigation()
         setupTableView()
-        furnitureItems = realm.objects(FurnitureItem.self)
+        furnitureItems = realm.objects(FurnitureItem.self).sorted(byKeyPath: "itemNumber", ascending: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == identifier {
-            if let _ = segue.destination as? AddItemViewController {
-                
+            if let addItemViewController = segue.destination as? AddItemViewController {
+                if let furnitures = furnitureItems {
+                    if let index = selectedIndexPath {
+                        addItemViewController.item = furnitures[index.row]
+                    }
+                    addItemViewController.count = furnitures.count + 1
+                }
             }
             
         }
@@ -80,6 +86,7 @@ class FurnitureLandingViewController: UIViewController {
     // MARK: - Private Methods
     private func setupNavigation() {
         navigationItem.title = "Furniture List"
+        navigationController?.navigationBar.tintColor = .white
         let addButton = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addButtonTapped))
         navigationItem.rightBarButtonItem = addButton
     }
@@ -110,6 +117,13 @@ extension FurnitureLandingViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(tableViewCellClass: FurnitureLandingTableViewCell.self)
         cell.setupCell(for: item)
         return cell 
+    }
+}
+
+extension FurnitureLandingViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedIndexPath = indexPath
+        performSegue(withIdentifier: identifier, sender: self)
     }
 }
 

@@ -16,10 +16,14 @@ class AddItemViewController: UIViewController {
     @IBOutlet var descriptionTextView: UITextView!
     
     var item: FurnitureItem?
+    var count: Int = 1
+    let realm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        setupNavigation()
+        setupViews()
     }
     
     private func setupNavigation() {
@@ -28,7 +32,18 @@ class AddItemViewController: UIViewController {
         navigationItem.rightBarButtonItem = saveButton
     }
     
+    private func setupViews() {
+        descriptionTextView.text = "Enter description here"
+    }
+    
     @objc func saveButtonTapped() {
+        let item = FurnitureItem(itemNumber: count, name: nameTextField.text!, type: typeTextField.text!, description: descriptionTextView.text!)
+        try! realm.write {
+            self.realm.add(item, update: true)
+        }
+        DispatchQueue.main.async {
+            self.navigationController?.popViewController(animated: true)
+        }
         
     }
 
