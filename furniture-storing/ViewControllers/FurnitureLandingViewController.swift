@@ -125,5 +125,9 @@ extension FurnitureLandingViewController: UITableViewDelegate {
         selectedIndexPath = indexPath
       //  performSegue(withIdentifier: identifier, sender: self)
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
+    }
 }
 

@@ -23,7 +23,12 @@ class FurnitureLandingTableViewCell: UITableViewCell {
     func setupCell(for item: FurnitureItem) {
         nameLabel.text = item.name
         typeLabel.text = item.type
-        
+        let image = Utility.getImage(imageName: "image\(item.itemNumber)")
+        if let image = image {
+            itemImageView.image = image
+        } else {
+            itemImageView.isHidden = true
+        }
     }
     
 }

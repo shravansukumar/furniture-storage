@@ -24,6 +24,11 @@ class AddItemViewController: UIViewController {
     let realm = try! Realm()
     var imagePickerController = UIImagePickerController()
     var saveButton = UIBarButtonItem()
+    var image: UIImage!
+    
+    var documentsUrl: URL {
+        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+    }
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -58,7 +63,22 @@ class AddItemViewController: UIViewController {
         }
     }
     
+    private func load(fileName: String) -> UIImage? {
+        let fileURL = documentsUrl.appendingPathComponent(fileName)
+        do {
+            let imageData = try Data(contentsOf: fileURL)
+            return UIImage(data: imageData)
+        } catch {
+            print("Error loading image : \(error)")
+        }
+        return nil
+    }
+    
     @objc func saveButtonTapped() {
+        
+        DispatchQueue.global(qos: .background).sync {
+            Utility.saveImage(imageName: "image\(count)", image: image)
+        }
         let item = FurnitureItem(itemNumber: count, name: nameTextField.text!, type: typeTextField.text!, description: descriptionTextView.text!)
         try! realm.write {
             self.realm.add(item, update: true)
@@ -79,10 +99,18 @@ class AddItemViewController: UIViewController {
 // MARK: - UIImagePickerControllerDelegate
 extension AddItemViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        print(info)
+        image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        
+        self.itemImageView.image = image
+        addImageButton.isHidden = true
+        itemImageView.isHidden = false
+        dismiss(animated: true, completion: nil)
+        
+        
     }
     
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        
+        dismiss(animated: true, completion: nil)
     }
 }

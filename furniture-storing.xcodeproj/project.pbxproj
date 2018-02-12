@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6C38384DC09E6786406CD8F1 /* Pods_furniture_storing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BF99B0FA07EA273BFE582EF /* Pods_furniture_storing.framework */; };
+		A46F95062031566C0029ADE1 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46F95052031566C0029ADE1 /* Utility.swift */; };
 		A47B97DE202ED6D500674E40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47B97DD202ED6D500674E40 /* AppDelegate.swift */; };
 		A47B97E0202ED6D500674E40 /* FurnitureLandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47B97DF202ED6D500674E40 /* FurnitureLandingViewController.swift */; };
 		A47B97E3202ED6D500674E40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A47B97E1202ED6D500674E40 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 		3B00095257C59E8D07D3988A /* Pods-furniture-storing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-furniture-storing.release.xcconfig"; path = "Pods/Target Support Files/Pods-furniture-storing/Pods-furniture-storing.release.xcconfig"; sourceTree = "<group>"; };
 		4BF99B0FA07EA273BFE582EF /* Pods_furniture_storing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_furniture_storing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		638FEE5D856C70EEAE32970F /* Pods-furniture-storing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-furniture-storing.debug.xcconfig"; path = "Pods/Target Support Files/Pods-furniture-storing/Pods-furniture-storing.debug.xcconfig"; sourceTree = "<group>"; };
+		A46F95052031566C0029ADE1 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		A47B97DA202ED6D500674E40 /* furniture-storing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "furniture-storing.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A47B97DD202ED6D500674E40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A47B97DF202ED6D500674E40 /* FurnitureLandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurnitureLandingViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				A47B97F6202EDFDD00674E40 /* Extensions.swift */,
+				A46F95052031566C0029ADE1 /* Utility.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A46F95062031566C0029ADE1 /* Utility.swift in Sources */,
 				A47B97F7202EDFDD00674E40 /* Extensions.swift in Sources */,
 				A47B97E0202ED6D500674E40 /* FurnitureLandingViewController.swift in Sources */,
 				A47B97DE202ED6D500674E40 /* AppDelegate.swift in Sources */,
