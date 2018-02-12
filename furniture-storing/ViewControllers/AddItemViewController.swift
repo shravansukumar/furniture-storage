@@ -25,10 +25,7 @@ class AddItemViewController: UIViewController {
     var imagePickerController = UIImagePickerController()
     var saveButton = UIBarButtonItem()
     var image: UIImage!
-    
-    var documentsUrl: URL {
-        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-    }
+    var viewMode: Bool = false
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -36,7 +33,6 @@ class AddItemViewController: UIViewController {
         
         setupNavigation()
         setupViews()
-        //addTextToImage()
     }
     
     // MARK: - Private Methods
@@ -49,33 +45,30 @@ class AddItemViewController: UIViewController {
     private func setupViews() {
         imagePickerController.delegate = self
         imagePickerController.sourceType = .camera
-        if let item = item {
-            nameTextField.text = item.name
-            typeTextField.text = item.type
-            addImageButton.isHidden = true
-            itemImageView.isHidden = false
+        if viewMode {
+            if let item = item {
+                nameTextField.text = item.name
+                typeTextField.text = item.type
+                itemImageView.image = Utility.getImage(imageName: "image\(item.itemNumber)")
+                if let description = item.itemDescription {
+                    descriptionTextView.text = description
+                } else {
+                    descriptionTextView.textColor = .red
+                    descriptionTextView.text = "Not available"
+                }
+                manage(visibilty: true)
+            }
             saveButton.isEnabled = false
         } else {
             descriptionTextView.text = "Enter description here"
-            addImageButton.isHidden = false
-            itemImageView.isHidden = true
+            descriptionTextView.isEditable = true
+            manage(visibilty: false)
             
         }
     }
     
-    private func load(fileName: String) -> UIImage? {
-        let fileURL = documentsUrl.appendingPathComponent(fileName)
-        do {
-            let imageData = try Data(contentsOf: fileURL)
-            return UIImage(data: imageData)
-        } catch {
-            print("Error loading image : \(error)")
-        }
-        return nil
-    }
     
     @objc func saveButtonTapped() {
-        
         DispatchQueue.global(qos: .background).sync {
             Utility.saveImage(imageName: "image\(count)", image: image)
         }
@@ -86,7 +79,14 @@ class AddItemViewController: UIViewController {
         DispatchQueue.main.async {
             self.navigationController?.popViewController(animated: true)
         }
-        
+    }
+    
+    func manage(visibilty: Bool) {
+        addImageButton.isHidden = visibilty
+        itemImageView.isHidden = !visibilty
+        nameTextField.isUserInteractionEnabled = !viewMode
+        typeTextField.isUserInteractionEnabled = !viewMode
+        descriptionTextView.isEditable = !viewMode
     }
     
     // MARK: - IBActions
@@ -102,10 +102,8 @@ extension AddItemViewController: UIImagePickerControllerDelegate, UINavigationCo
         image = info[UIImagePickerControllerOriginalImage] as? UIImage
         
         self.itemImageView.image = image
-        addImageButton.isHidden = true
-        itemImageView.isHidden = false
+        manage(visibilty: true)
         dismiss(animated: true, completion: nil)
-        
         
     }
     

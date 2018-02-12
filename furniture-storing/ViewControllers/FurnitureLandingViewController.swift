@@ -33,18 +33,16 @@ class FurnitureLandingViewController: UIViewController {
                     
                     tableView.beginUpdates()
                     
-                    //re-order repos when new pushes happen
                     tableView.insertRows(at: insertions.map { IndexPath(row: $0, section: 0) },
                                          with: .automatic)
                     tableView.deleteRows(at: deletions.map { IndexPath(row: $0, section: 0) },
                                          with: .automatic)
                     
-                    //flash cells when repo gets more stars
                     for row in modifications {
                         let indexPath = IndexPath(row: row, section: 0)
                         let repo = results[indexPath.row]
                         if let cell = tableView.cellForRow(at: indexPath) as? FurnitureLandingTableViewCell {
-                           cell.setupCell(for: repo)
+                            cell.setupCell(for: repo)
                         } else {
                             print("cell not found for \(indexPath)")
                         }
@@ -69,24 +67,12 @@ class FurnitureLandingViewController: UIViewController {
         furnitureItems = realm.objects(FurnitureItem.self).sorted(byKeyPath: "itemNumber", ascending: true)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == identifier {
-            if let addItemViewController = segue.destination as? AddItemViewController {
-                if let furnitures = furnitureItems {
-                    if let index = selectedIndexPath {
-                        addItemViewController.item = furnitures[index.row]
-                    }
-                    addItemViewController.count = furnitures.count + 1
-                }
-            }
-            
-        }
-    }
     
     // MARK: - Private Methods
     private func setupNavigation() {
         navigationItem.title = "Furniture List"
         navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
         let addButton = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addButtonTapped))
         navigationItem.rightBarButtonItem = addButton
     }
@@ -96,19 +82,43 @@ class FurnitureLandingViewController: UIViewController {
         tableView.registerNib(viewClass: FurnitureLandingTableViewCell.self)
     }
     
+    // MARK: - Public Methods
     @objc func addButtonTapped() {
-        performSegue(withIdentifier: identifier, sender: self)
+        pushToAddItemViewController()
     }
+    
+    func manange(visibility: Bool) {
+        emptyTextLabel.isHidden = visibility
+        tableView.isHidden = !visibility
+    }
+    
+    func pushToAddItemViewController(for index: IndexPath? = nil) {
+        let itemViewController = self.storyboard?.instantiateViewController(withIdentifier: "addItemViewController") as! AddItemViewController
+        if let furnitures = furnitureItems {
+            if let indexPath = index {
+                itemViewController.item = furnitureItems?[indexPath.row]
+                itemViewController.viewMode = true
+            }
+            itemViewController.count = furnitures.count + 1
+        }
+        navigationController?.pushViewController(itemViewController, animated: true)
+    }
+    
 }
 
 // MARK: - UITableViewDataSource
 extension FurnitureLandingViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let items = furnitureItems {
+            if items.count == 0 {
+                manange(visibility: false)
+            } else {
+                manange(visibility: true)
+            }
             return items.count
         } else {
-            //emptyTextLabel.isHidden = false
-        return 0
+            manange(visibility: false)
+            return 0
         }
     }
     
@@ -123,7 +133,7 @@ extension FurnitureLandingViewController: UITableViewDataSource {
 extension FurnitureLandingViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedIndexPath = indexPath
-      //  performSegue(withIdentifier: identifier, sender: self)
+        pushToAddItemViewController(for: indexPath)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
