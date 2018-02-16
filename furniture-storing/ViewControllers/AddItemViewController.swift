@@ -37,7 +37,7 @@ class AddItemViewController: UIViewController {
     
     // MARK: - Private Methods
     private func setupNavigation() {
-        navigationItem.title = "Add Item"
+        navigationItem.title = viewMode ? "Item Info" : "Add Item"
         saveButton = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveButtonTapped))
         navigationItem.rightBarButtonItem = saveButton
     }
